@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration xmlns="http://logging.apache.org/log4j/2.0/config"
+	monitorInterval="30">
+
+	<Appenders>
+<!-- 		<RollingFile name="RollingFile">
+			<FileName>/usr/src/siftira/sift-ira.log</FileName>
+			<FilePattern>/usr/src/siftira/sift-ira-logs/%d{yyyy-MM-dd-hh}-%i.log.zip
+			</FilePattern>
+			<PatternLayout>
+				<Pattern>%d{yyyy-MMM-dd HH:mm:ss a} [%t] %-5level %logger{36} -
+					%msg%n</Pattern>
+			</PatternLayout>
+			<Policies>
+				<SizeBasedTriggeringPolicy size="10 KB" />
+			</Policies>
+			<DefaultRolloverStrategy max="5" />
+		</RollingFile>
+ -->
+		<Console name="STDOUT" target="SYSTEM_OUT">
+			<PatternLayout
+				pattern="%-5p | %d{yyyy-MM-dd HH:mm:ss} | [%t] %C{2} (%F:%L) - %m%n" />
+		</Console>
+	</Appenders>
+
+	<Loggers>
+		<Logger name="org.steam" level="info" />
+
+		<Root level="info">
+			<AppenderRef ref="STDOUT" />
+			<!--  <AppenderRef ref="RollingFile" />  -->
+		</Root>
+	</Loggers>
+
+</Configuration>
